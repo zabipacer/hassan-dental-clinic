@@ -94,13 +94,16 @@ const Testimonials = () => {
   </div>
 
   <div className="mt-6 text-center">
-    <a
-      href="/contact"
-      className="inline-block bg-teal-600 text-white font-medium py-2 px-6 rounded-full hover:bg-teal-700 transition-all duration-300"
-    >
-      Book Your Consultation Now
-    </a>
-  </div>
+  <a
+    href="https://wa.me/923216739504" // Replace this with the correct WhatsApp number link
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-block bg-teal-600 text-white font-medium py-2 px-6 rounded-full hover:bg-teal-700 transition-all duration-300"
+  >
+    Book Your Consultation Now
+  </a>
+</div>
+
 </div>
 
 

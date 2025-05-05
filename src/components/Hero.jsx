@@ -34,7 +34,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative w-full min-h-screen bg-gradient-to-b from-blue-600 to-blue-800 lg:pt-25 overflow-hidden">
+    <section className="relative w-full min-h-screen bg-gradient-to-b from-blue-600 to-blue-800 pt-25 overflow-hidden">
       <Helmet>
         <title>Dental Clinic Faisalabad | Pain-Free Smiles Since 2008</title>
         <meta
