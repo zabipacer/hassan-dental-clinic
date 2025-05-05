@@ -17,9 +17,9 @@ export const Navbar = () => {
         {/* Logo with text */}
         <div className="flex items-center gap-2">
           <img
-            src="/DL.jpeg" // Replace with your logo image path
+            src="/DL.jpeg"
             alt="Doctor Teeth Clinic Logo"
-            className="w-15 h-15 rounded-full mr-5 object-cover" // Adjust size as necessary
+            className="w-15 h-15 rounded-full mr-5 object-cover"
           />
           <div className="text-2xl font-bold">
             Doctor Teeth Clinic Faisalabad
@@ -81,21 +81,33 @@ export const Navbar = () => {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white/10 backdrop-blur-md border-t border-white/20 px-6 py-4 space-y-4 text-center">
-          <a href="#services" className="block hover:underline" onClick={() => setMenuOpen(false)}>
+        <div className="md:hidden bg-blue-900 text-white px-6 py-6 space-y-4 text-center shadow-lg">
+          <a
+            href="#services"
+            className="block hover:underline"
+            onClick={() => setMenuOpen(false)}
+          >
             Services
           </a>
-          <a href="#testimonials" className="block hover:underline" onClick={() => setMenuOpen(false)}>
+          <a
+            href="#testimonials"
+            className="block hover:underline"
+            onClick={() => setMenuOpen(false)}
+          >
             Testimonials
           </a>
-          <a href="#about" className="block hover:underline" onClick={() => setMenuOpen(false)}>
+          <a
+            href="#about"
+            className="block hover:underline"
+            onClick={() => setMenuOpen(false)}
+          >
             About
           </a>
           <a
             href="https://wa.me/923216739504"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white text-blue-700 px-5 py-2 rounded-full font-medium hover:bg-blue-100 transition w-full"
+            className="bg-white text-blue-700 px-5 py-2 rounded-full font-medium hover:bg-blue-100 transition block mx-auto w-fit"
             onClick={() => setMenuOpen(false)}
           >
             Book Appointment

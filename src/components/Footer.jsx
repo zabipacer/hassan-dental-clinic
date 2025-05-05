@@ -18,11 +18,11 @@ const Footer = () => {
           <h4 className="text-xl font-semibold mb-4">Doctor Teeth Clinic</h4>
           <p className="text-sm mb-2 flex items-center gap-2">
             <FaMapMarkerAlt />
-            61-C Peoples Colony No 1, Faisalabad
+            Makkah Commercial Market, 208 Chak Road, Jinnah Avenue, Eden Valley, Faisalabad
           </p>
           <p className="text-sm mb-2 flex items-center gap-2">
             <FaPhone />
-            <a href="tel:+923001234567" className="hover:underline">+92 300 1234567</a>
+            <a href="tel:+923334271398" className="hover:underline">+92 333 4271398</a>
           </p>
           <p className="text-sm flex items-center gap-2">
             <FaEnvelope />
@@ -62,12 +62,12 @@ const Footer = () => {
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <FaInstagram className="text-lg hover:text-pink-300" />
             </a>
-            <a href="https://wa.me/923001234567" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <a href="https://wa.me/923334271398" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
               <FaWhatsapp className="text-lg hover:text-green-300" />
             </a>
           </div>
           <p className="text-sm">
-            Looking for a <strong>dentist near Peoples Colony Faisalabad</strong>? Visit Doctor Teeth for pain-free dental care.
+            Looking for a <strong>dentist near Eden Valley or Peoples Colony Faisalabad</strong>? Visit Doctor Teeth for pain-free dental care.
           </p>
         </div>
 
