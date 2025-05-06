@@ -4,48 +4,142 @@ import {
   FaTeethOpen,
   FaSmile,
   FaUserMd,
-  FaTeeth,
   FaXRay,
+  FaChild,
+  FaTeeth,
+  FaRegGrinBeam,
+  FaProcedures,
+  FaClinicMedical,
+  FaFirstAid,
+  FaShieldAlt,
+  FaHeadSideVirus,
+  FaBriefcaseMedical,
+  FaLaptopMedical,
+  FaRegLaughBeam,
 } from 'react-icons/fa';
 
 const services = [
+  // Preventive Care
+  {
+    title: 'Dental Checkup in Faisalabad',
+    description: 'Regular checkups to maintain oral health.',
+    icon: <FaClinicMedical className="text-3xl text-teal-600" />,
+    link: '/dental-checkup-faisalabad',
+  },
+  {
+    title: 'Scaling & Polishing',
+    description: 'Remove plaque & stains for healthier gums.',
+    icon: <FaTooth className="text-3xl text-teal-600" />,
+    link: '/scaling-polishing-faisalabad',
+  },
+  {
+    title: 'Fluoride Treatment',
+    description: 'Prevent cavities with fluoride care.',
+    icon: <FaShieldAlt className="text-3xl text-teal-600" />,
+    link: '/fluoride-treatment',
+  },
+
+  // Cosmetic Dentistry
   {
     title: 'Teeth Whitening Faisalabad',
     description: 'Brighten your smile in one visit.',
     icon: <FaSmile className="text-3xl text-teal-600" />,
-    link: '/teeth-whitening-lahore',
+    link: '/teeth-whitening-faisalabad',
+  },
+  {
+    title: 'Smile Makeover',
+    description: 'Transform your smile with multiple procedures.',
+    icon: <FaRegLaughBeam className="text-3xl text-teal-600" />,
+    link: '/smile-makeover',
+  },
+  {
+    title: 'Veneers in Faisalabad',
+    description: 'Cover imperfections with custom veneers.',
+    icon: <FaSmile className="text-3xl text-teal-600" />,
+    link: '/veneers-faisalabad',
+  },
+
+  // Restorative Dentistry
+  {
+    title: 'Dental Fillings',
+    description: 'Treat cavities with safe, aesthetic fillings.',
+    icon: <FaTooth className="text-3xl text-teal-600" />,
+    link: '/dental-fillings',
+  },
+  {
+    title: 'Dental Crowns & Bridges',
+    description: 'Restore damaged or missing teeth.',
+    icon: <FaRegGrinBeam className="text-3xl text-teal-600" />,
+    link: '/dental-crowns-bridges',
   },
   {
     title: 'Dental Implants in Faisalabad',
     description: 'Permanent solutions for missing teeth.',
-    icon: <FaTooth className="text-3xl text-teal-600" />,
-    link: '/dental-implants-in-lahore',
+    icon: <FaTeeth className="text-3xl text-teal-600" />,
+    link: '/dental-implants-faisalabad',
   },
+
+  // Orthodontics
   {
-    title: 'Emergency Dentistry',
-    description: '24/7 urgent dental care.',
-    icon: <FaUserMd className="text-3xl text-teal-600" />,
-    link: '/emergency-dentistry',
-  },
-  {
-    title: 'Smile Makeovers',
-    description: 'Transform your smile with cosmetic care.',
-    icon: <FaSmile className="text-3xl text-teal-600" />,
-    link: '/smile-makeovers',
-  },
-  {
-    title: 'Orthodontics (Braces)',
-    description: 'Align teeth with modern braces.',
+    title: 'Braces & Aligners',
+    description: 'Straighten your teeth with fixed or removable options.',
     icon: <FaTeethOpen className="text-3xl text-teal-600" />,
-    link: '/orthodontics-braces',
+    link: '/braces-aligners-faisalabad',
   },
+
+  // Root Canal & Surgery
   {
-    title: 'Root Canal Treatment',
+    title: 'Root Canal Treatment (RCT)',
     description: 'Pain-free root canal procedures.',
     icon: <FaXRay className="text-3xl text-teal-600" />,
     link: '/root-canal-treatment',
   },
+  {
+    title: 'Wisdom Tooth Extraction',
+    description: 'Safe removal of impacted wisdom teeth.',
+    icon: <FaUserMd className="text-3xl text-teal-600" />,
+    link: '/wisdom-tooth-extraction',
+  },
+
+  // Kids Dentistry
+  {
+    title: 'Pediatric Dentistry in Faisalabad',
+    description: 'Gentle dental care for children.',
+    icon: <FaChild className="text-3xl text-teal-600" />,
+    link: '/kids-dentist-faisalabad',
+  },
+
+  // Gum & Periodontal
+  {
+    title: 'Gum Disease Treatment',
+    description: 'Treat gingivitis & advanced gum issues.',
+    icon: <FaHeadSideVirus className="text-3xl text-teal-600" />,
+    link: '/gum-disease-treatment',
+  },
+
+  // Emergency Dental Care
+  {
+    title: 'Emergency Dentist in Faisalabad',
+    description: '24/7 urgent dental care.',
+    icon: <FaFirstAid className="text-3xl text-teal-600" />,
+    link: '/emergency-dentist-faisalabad',
+  },
+
+  // Specialty
+  {
+    title: 'Maxillofacial Surgery',
+    description: 'Advanced facial and jaw surgeries.',
+    icon: <FaProcedures className="text-3xl text-teal-600" />,
+    link: '/maxillofacial-surgery',
+  },
+  {
+    title: 'TMJ / Jaw Pain Treatment',
+    description: 'Relieve chronic jaw pain with expert care.',
+    icon: <FaBriefcaseMedical className="text-3xl text-teal-600" />,
+    link: '/tmj-treatment-faisalabad',
+  },
 ];
+
 
 const FeaturedServices = () => {
   return (

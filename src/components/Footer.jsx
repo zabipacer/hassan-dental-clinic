@@ -18,15 +18,15 @@ const Footer = () => {
           <h4 className="text-xl font-semibold mb-4">Doctor Teeth Clinic</h4>
           <p className="text-sm mb-2 flex items-center gap-2">
             <FaMapMarkerAlt />
-            Makkah Commercial Market, 208 Chak Road, Jinnah Avenue, Eden Valley, Faisalabad
+            Ajmal Center, near Nadra Executive Office, opp. Gourmet Bakers, Batala Colony Faisalabad
           </p>
           <p className="text-sm mb-2 flex items-center gap-2">
             <FaPhone />
-            <a href="tel:+923334271398" className="hover:underline">+92 333 4271398</a>
+            <a href="tel:0321 6739504" className="hover:underline">0321 6739504</a>
           </p>
           <p className="text-sm flex items-center gap-2">
             <FaEnvelope />
-            <a href="mailto:info@doctorteeth.pk" className="hover:underline">info@doctorteeth.pk</a>
+            <a href="mailto:chocobeans008@gmail.com" className="hover:underline">chocobeans008@gmail.com</a>
           </p>
         </div>
 
@@ -56,12 +56,10 @@ const Footer = () => {
         <div>
           <h4 className="text-xl font-semibold mb-4">Connect With Us</h4>
           <div className="flex space-x-4 mb-4">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <a href="https://www.facebook.com/doctorteethdental" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
               <FaFacebookF className="text-lg hover:text-blue-300" />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-              <FaInstagram className="text-lg hover:text-pink-300" />
-            </a>
+            
             <a href="https://wa.me/923334271398" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
               <FaWhatsapp className="text-lg hover:text-green-300" />
             </a>

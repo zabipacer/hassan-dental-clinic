@@ -26,10 +26,11 @@ const LocalSEOSection = () => {
           {/* Clinic Information */}
           <div>
             <p className="text-lg text-gray-700 mb-4">
-              <strong>Address:</strong> Makkah Commercial Market, 208 Chak Road, Jinnah Avenue, Eden Valley, Faisalabad
+              <strong>Address:</strong> Doctor Teeth Dental Clinic Ajmal Center, opposite Gourmet Bakery, near Nadra Executive, Batala Colony, Faisalabad.
+          
             </p>
             <p className="text-lg text-gray-700 mb-4">
-              <strong>Phone:</strong> <a href="tel:03334271398" className="text-blue-600 hover:underline">0333-4271398</a>
+              <strong>Phone:</strong> <a href="tel:03334271398" className="text-blue-600 hover:underline">0321-6739504</a>
             </p>
             <p className="text-lg text-gray-700 mb-4">
               <strong>Service Areas:</strong> Eden Valley, Jinnah Colony, Batala Colony, Peoples Colony, Gulberg, and surrounding areas.
