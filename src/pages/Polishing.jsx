@@ -1,6 +1,8 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { FaPhoneAlt, FaMapMarkerAlt, FaCalendarCheck } from 'react-icons/fa';
+import LocalSEOSection from '../components/LocalMAp';
+import Testimonials from '../components/Testimonial';
 
 const TeethScalingPolishingPage = () => {
   const schemaData = {
@@ -163,6 +165,9 @@ const TeethScalingPolishingPage = () => {
           </div>
         </div>
       </div>
+<LocalSEOSection/>
+<Testimonials/>
+
     </section>
   );
 };
