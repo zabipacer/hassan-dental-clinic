@@ -23,6 +23,7 @@ import GumDiseaseTreatment from "./pages/GumDisease";
 import EmergencyDentistFaisalabad from "./pages/Emergency";
 import MaxillofacialSurgeryFaisalabad from "./pages/Maxillofacial";
 import TMJTreatmentFaisalabad from "./pages/Tmj";
+import DentalCheckupLandingPage from "./pages/DentalCeckup";
 
 const router = createBrowserRouter([
   {
@@ -114,7 +115,11 @@ const router = createBrowserRouter([
     element: <TMJTreatmentFaisalabad/>, // Show App component in the Layout
 
   }, 
-      // Add more routes here as needed
+  {
+    path: "/dental-checkup-faisalabad", // Home route
+    element: <DentalCheckupLandingPage/>, // Show App component in the Layout
+
+  },  // Add more routes here as needed
     ],
   },
 ]);
