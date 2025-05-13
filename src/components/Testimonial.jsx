@@ -16,6 +16,51 @@ const testimonials = [
     text: "The smile makeover was life-changing. Best cosmetic dentist in Faisalabad!",
     image: "/T3.jpg",
   },
+  {
+    name: "Muhammad Ibrahim",
+    text: "Very competent and humble doctor.",
+    image: "/T3.jpg",
+  },
+  {
+    name: "Dr. Urooj Muddasar",
+    text: "I went to doctor for the solution of my broken teeth. He treated me very well; the procedure he opted was professional.",
+    image: "/T3.jpg",
+  },
+  {
+    name: "Faisal Ramzii",
+    text: "Keepin' it simple, I came to Pak from KSA and visited Dr. Tajwer. After consulting and getting quotes from others, I chose them.",
+    image: "/T3.jpg",
+  },
+  {
+    name: "Amir James",
+    text: "Doctor Mohsin Refique is very nice. He provided exceptional care and service.",
+    image: "/T3.jpg",
+  },
+  {
+    name: "Shahid Rasool",
+    text: "Extraordinary satisfaction! Very friendly and experienced doctor. Highly recommended.",
+    image: "/T3.jpg",
+  },
+  {
+    name: "Nauman Sabir",
+    text: "Doc was very friendly and walked me through the entire process. Great experience!",
+    image: "/T3.jpg",
+  },
+  {
+    name: "Areej Kashif",
+    text: "Excellent experience with my family. Doctor was very friendly and efficient. Highly recommended Dr. Tajwer!",
+    image: "/T3.jpg",
+  },
+  {
+    name: "Kashif Ali",
+    text: "Best in town. Affordable, excellent, and quick service. Highly recommended.",
+    image: "/T3.jpg",
+  },
+  {
+    name: "Kiran Kashif",
+    text: "Very professional. Satisfied Alhamdulillah.",
+    image: "/T3.jpg",
+  },
 ];
 
 const Testimonials = () => {

@@ -1,65 +1,91 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-// If your image is inside /public folder, you can leave the src as "hero.jpg"
-// If it's in /src/assets, then uncomment the line below:
-// import heroImg from '../assets/hero.jpg';
-
 const HeroSection = () => {
-  const scrollToContact = () => {
-    const element = document.getElementById('contact-form');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "Dentist",
-    name: "Dental Clinic Faisalabad",
-    description:
-      "Award-winning care, dental implants, and free consultations at Faisalabad's #1 dental clinic.",
-    keywords: "dentist Faisalabad, dental implants, dental clinic Faisalabad",
-    address: {
+    "name": "Doctor Teeth Dental Clinic",
+    "image": "https://yourwebsite.com/images/hero.jpg",
+    "url": "https://yourwebsite.com",
+    "telephone": "+92-321-6739504",
+    "priceRange": "PKR 500 - 5000",
+    "address": {
       "@type": "PostalAddress",
-      addressLocality: "Faisalabad",
-      addressRegion: "Punjab",
-      postalCode: "",
-      streetAddress: ""
+      "streetAddress": "Main Road",
+      "addressLocality": "Faisalabad",
+      "addressRegion": "Punjab",
+      "postalCode": "38000",
+      "addressCountry": "PK"
     },
-    openingHours: "Mo,Tu,We,Th,Fr,Sa,Su 00:00-24:00",
-    telephone: "+923001234567",
-    priceRange: "$$",
-    image: "https://yourclinic.com/images/hero.jpg"
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 31.418,
+      "longitude": 73.079
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "10:00",
+        "closes": "22:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Sunday",
+        "opens": "11:00",
+        "closes": "18:00"
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "200"
+    },
+    "sameAs": [
+      "https://www.facebook.com/DoctorTeethPK",
+      "https://www.instagram.com/DoctorTeethPK"
+    ],
+    "potentialAction": {
+      "@type": "ReserveAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://wa.me/923216739504",
+        "inLanguage": "en",
+        "actionPlatform": [
+          "https://schema.org/DesktopWebPlatform",
+          "https://schema.org/MobileWebPlatform"
+        ]
+      },
+      "result": {
+        "@type": "Reservation",
+        "name": "Dental Appointment"
+      }
+    }
   };
 
   return (
     <section className="relative w-full min-h-screen bg-gradient-to-b from-blue-600 to-blue-800 pt-15 lg:pt-25 overflow-hidden">
       <Helmet>
-        <title>Dental Clinic Faisalabad | Pain-Free Smiles Since 2008</title>
-        <meta
-          name="description"
-          content="Faisalabad's #1 dental clinic offering pain-free smiles, over 5,000 happy patients, and free consultations."
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Doctor Teeth Dental Clinic Faisalabad | #1 Pain-Free Dental Care</title>
+        <meta name="description" content="Award-winning dental care in Faisalabad. Over 5,000 happy patients, 4.9/5 star reviews, dental implants, and free consultations." />
+        <meta name="keywords" content="dentist Faisalabad, dental implants, dental clinic Faisalabad" />
         <meta charSet="utf-8" />
-        <meta
-          property="og:title"
-          content="Dental Clinic Faisalabad | Pain-Free Smiles Since 2008"
-        />
-        <meta
-          property="og:description"
-          content="Faisalabad's #1 dental clinic offering pain-free smiles, over 5,000 happy patients, and free consultations."
-        />
+        <meta property="og:title" content="Doctor Teeth Dental Clinic Faisalabad | #1 Pain-Free Dental Care" />
+        <meta property="og:description" content="Award-winning dental care in Faisalabad. Over 5,000 happy patients, 4.9/5 star reviews, dental implants, and free consultations." />
         <meta property="og:type" content="website" />
-        <link rel="canonical" href="https://yourclinic.com/faisalabad" />
-        <script type="application/ld+json">
-          {JSON.stringify(schemaData)}
-        </script>
+        <link rel="canonical" href="https://yourwebsite.com" />
+        <script type="application/ld+json">{JSON.stringify(schemaData)}</script>
       </Helmet>
 
       <div className="container mx-auto px-6 py-20 lg:py-0 h-full flex flex-col lg:flex-row items-center justify-between">
-        {/* Left Text Content */}
         <div className="w-full lg:w-1/2 text-center lg:text-left space-y-6 text-white">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
             <span className="block">Faisalabad's #1</span>
@@ -131,13 +157,12 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Right Image */}
         <div className="w-full lg:w-1/2 mt-12 lg:mt-0 flex justify-center">
           <div className="relative group">
             <div className="absolute -inset-4 bg-white/20 rounded-2xl blur-lg group-hover:scale-105 transition-transform"></div>
             <img
-              src="hero.jpg" // or use {heroImg} if imported
-              alt="Smiling dentist with patient at Dental Clinic Faisalabad"
+              src="hero.jpg"
+              alt="Dentist with patient at Doctor Teeth Clinic"
               className="w-full max-w-md lg:max-w-lg rounded-lg shadow-2xl relative border-4 border-white/20 group-hover:scale-105 transition-transform duration-300"
               width={600}
               height={400}

@@ -10,6 +10,7 @@ import Testimonials from './components/Testimonial'
 import LocalSEOSection from './components/LocalMAp'
 import FaqAccordion from './components/FAQS'
 import Footer from './components/Footer'
+import TestimonialsA from './components/ApiTestimonial'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -17,13 +18,14 @@ function App() {
   return (
     <>
 <HeroSection/>
-<Navbar/>
+
 <FeaturedServices/>
 <WhyChooseUs/>
+
 <Testimonials/>
 <LocalSEOSection/>
 <FaqAccordion/>
-<Footer/>
+
     </>
   )
 }

@@ -36,7 +36,7 @@ const LocalSEOSection = () => {
               <strong>Service Areas:</strong> Eden Valley, Jinnah Colony, Batala Colony, Peoples Colony, Gulberg, and surrounding areas.
             </p>
             <a
-  href="https://wa.me/923216739504" // Replace with your correct number
+  href="https://g.co/kgs/dnjVekN" // Replace with your correct number
   target="_blank"
   rel="noopener noreferrer"
   className="inline-block mt-4 px-6 py-3 bg-teal-600 text-white rounded-lg shadow hover:bg-teal-700 transition duration-300"

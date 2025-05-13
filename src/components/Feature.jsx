@@ -30,13 +30,13 @@ const services = [
     title: 'Scaling & Polishing',
     description: 'Remove plaque & stains for healthier gums.',
     icon: <FaTooth className="text-3xl text-teal-600" />,
-    link: '/scaling-polishing-faisalabad',
+    link: '/scaling-and-polishing-in-faisalabad',
   },
   {
     title: 'Fluoride Treatment',
     description: 'Prevent cavities with fluoride care.',
     icon: <FaShieldAlt className="text-3xl text-teal-600" />,
-    link: '/fluoride-treatment',
+    link: '/Fluoride-Treatment-in-faisalabad',
   },
 
   // Cosmetic Dentistry
@@ -44,13 +44,13 @@ const services = [
     title: 'Teeth Whitening Faisalabad',
     description: 'Brighten your smile in one visit.',
     icon: <FaSmile className="text-3xl text-teal-600" />,
-    link: '/teeth-whitening-faisalabad',
+    link: '/Teeth-whitening-in-faisalabad',
   },
   {
     title: 'Smile Makeover',
     description: 'Transform your smile with multiple procedures.',
     icon: <FaRegLaughBeam className="text-3xl text-teal-600" />,
-    link: '/smile-makeover',
+    link: '/Smile-Makeover-faisalabad',
   },
   {
     title: 'Veneers in Faisalabad',
@@ -64,19 +64,19 @@ const services = [
     title: 'Dental Fillings',
     description: 'Treat cavities with safe, aesthetic fillings.',
     icon: <FaTooth className="text-3xl text-teal-600" />,
-    link: '/dental-fillings',
+    link: '/Dental-Fillings-faisalabad',
   },
   {
     title: 'Dental Crowns & Bridges',
     description: 'Restore damaged or missing teeth.',
     icon: <FaRegGrinBeam className="text-3xl text-teal-600" />,
-    link: '/dental-crowns-bridges',
+    link: '/Dental-Crown-Bridges-Faisalabad',
   },
   {
     title: 'Dental Implants in Faisalabad',
     description: 'Permanent solutions for missing teeth.',
     icon: <FaTeeth className="text-3xl text-teal-600" />,
-    link: '/dental-implants-faisalabad',
+    link: '/Dental-implants-Faisalabad',
   },
 
   // Orthodontics
@@ -92,7 +92,7 @@ const services = [
     title: 'Root Canal Treatment (RCT)',
     description: 'Pain-free root canal procedures.',
     icon: <FaXRay className="text-3xl text-teal-600" />,
-    link: '/root-canal-treatment',
+    link: '/root-canal-faisalabad',
   },
   {
     title: 'Wisdom Tooth Extraction',

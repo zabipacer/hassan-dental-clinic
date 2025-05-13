@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -16,11 +17,12 @@ export const Navbar = () => {
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo with text */}
         <div className="flex items-center gap-2">
-          <img
+         <Link to={"/"}
+         ><img
             src="/DL.jpeg"
             alt="Doctor Teeth Clinic Logo"
             className="w-15 h-15 rounded-full mr-5 object-cover"
-          />
+          /></Link> 
           <div className="text-2xl font-bold">
             Doctor Teeth Clinic Faisalabad
           </div>
