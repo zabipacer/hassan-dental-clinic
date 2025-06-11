@@ -1,127 +1,155 @@
+// FaqAccordion.js
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const faqs = [
   {
-    question: 'What is the cost of dental implants in Faisalabad?',
+    question: 'How much do dental implants cost in Karachi?',
     answer: (
       <>
-        The cost of dental implants in Faisalabad varies based on the clinic and the specific requirements of the patient. On average, the fee ranges from PKR 300 to 2,000 per consultation. For detailed pricing, please refer to our <a href="/dental-implants-faisalabad" className="text-teal-600 underline">Dental Implants in Faisalabad</a> page.
+        Dental implant costs at Dr. Saeed Dental, Implant & Aesthetic Clinic depend on the procedure complexity and materials used. Typical prices range from PKR 25,000 to PKR 60,000 per implant. Learn more on our <a href="/dental-implants-karachi" className="text-red-400 underline">Dental Implants in Karachi</a> page.
       </>
     ),
   },
   {
-    question: 'Do you offer payment plans for dental treatments?',
+    question: 'Do you offer flexible payment plans?',
     answer: (
       <>
-        Yes, we provide flexible payment plans for various treatments, including implants, braces, and cosmetic procedures. Our goal is to make quality dental care accessible to everyone in Faisalabad.
+        Yes—we provide custom payment plans for implants, orthodontics, and cosmetic dentistry to make quality care accessible for all residents of Karachi.
       </>
     ),
   },
   {
-    question: 'How often should I visit the dentist for a check-up?',
+    question: 'What is the recommended check-up frequency?',
     answer: (
       <>
-        It's recommended to visit the dentist every six months for a routine check-up and cleaning. Regular visits help in early detection and prevention of dental issues.
+        Regular dental exams every 6 months help with early detection and preventive care. We recommend biannual visits to keep your smile healthy and bright.
       </>
     ),
   },
   {
-    question: 'Are teeth whitening procedures safe?',
+    question: 'Are professional teeth whitening treatments safe?',
     answer: (
       <>
-        Professional teeth whitening procedures are safe when performed under the supervision of qualified dental professionals. We use approved methods to ensure effective and safe results.
+        Absolutely—our in-office whitening uses medical-grade bleaching agents under expert supervision, ensuring safe and effective results in 45–60 minutes.
       </>
     ),
   },
   {
-    question: 'What are the options for replacing missing teeth?',
+    question: 'What options exist for replacing missing teeth?',
     answer: (
       <>
-        Options for replacing missing teeth include dental implants, bridges, and dentures. The best option depends on individual needs and oral health status. Consult our specialists to determine the most suitable solution for you.
+        We offer implants, bridges, and dentures. Our specialists will assess your oral health and recommend the best long-term solution tailored to you.
       </>
     ),
   },
   {
-    question: 'Do you provide emergency dental services in Faisalabad?',
+    question: 'Do you handle dental emergencies in Karachi?',
     answer: (
       <>
-        Yes, we offer emergency dental services to address urgent dental issues promptly. Please contact our clinic immediately if you require emergency care.
+        Yes, we provide 24/7 emergency care for severe toothaches, trauma, and infections. Contact us immediately for prompt assistance.
       </>
     ),
   },
   {
-    question: 'What is the process for getting braces?',
+    question: 'What is the braces fitting process?',
     answer: (
       <>
-        The process begins with a consultation to assess your dental alignment. If braces are suitable, we'll develop a personalized treatment plan. Regular follow-up visits are essential to monitor progress.
+        After an initial consultation and scan, we design a customized braces or clear aligner plan. Follow-up visits every 4–6 weeks ensure optimal progress.
       </>
     ),
   },
   {
-    question: 'Is root canal treatment painful?',
+    question: 'Is root canal therapy painful?',
     answer: (
       <>
-        Modern root canal treatments are performed under local anesthesia, making the procedure relatively painless. Our experienced dentists ensure patient comfort throughout the process.
+        Modern root canals at our clinic use local anesthesia and advanced rotary instruments, making the procedure virtually painless for most patients.
       </>
     ),
   },
   {
-    question: 'Do you offer pediatric dental services?',
+    question: 'Do you offer dental care for children?',
     answer: (
       <>
-        Yes, we provide comprehensive dental care for children, focusing on preventive measures and creating a comfortable environment for young patients.
+        Yes—Dr. Saeed Dental Clinic provides specialized pediatric dentistry, focusing on gentle exams, preventive sealants, and habit counseling for kids.
       </>
     ),
   },
   {
-    question: 'What precautions are taken for infection control?',
+    question: 'How do you maintain infection control?',
     answer: (
       <>
-        We adhere to strict sterilization protocols and use disposable instruments where applicable to ensure the highest standards of infection control.
+        We follow strict sterilization protocols—using autoclaves, disposable instruments, and medical-grade disinfectants to ensure 100% patient safety.
       </>
     ),
   },
 ];
 
-const FaqAccordion = () => {
+export default function FaqAccordion() {
   const [openIndex, setOpenIndex] = useState(null);
-
-  const toggle = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
+  const toggle = (i) => setOpenIndex(openIndex === i ? null : i);
 
   return (
-    <section className="bg-gray-50 py-16 px-4" id="faq" itemScope itemType="https://schema.org/FAQPage">
+    <section
+      id="faq"
+      className="bg-gradient-to-r from-blue-900 to-red-600 py-20 px-4 text-white"
+      itemScope
+      itemType="https://schema.org/FAQPage"
+      aria-labelledby="faq-title"
+    >
       <div className="max-w-3xl mx-auto">
-        <h2 className="text-3xl font-bold text-blue-800 text-center mb-10">Frequently Asked Questions</h2>
+        <motion.h2
+          id="faq-title"
+          className="text-4xl font-extrabold text-center mb-12 text-white"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          Frequently Asked Questions
+        </motion.h2>
+
         <div className="space-y-4">
-          {faqs.map((faq, index) => (
-            <div
-              key={index}
-              className="border border-gray-200 rounded-lg bg-white shadow-sm"
+          {faqs.map((faq, idx) => (
+            <motion.div
+              key={idx}
+              className="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg overflow-hidden border border-white/20"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: idx * 0.1 }}
               itemScope
               itemProp="mainEntity"
               itemType="https://schema.org/Question"
             >
               <button
-                className="w-full text-left px-6 py-4 font-medium text-blue-700 focus:outline-none flex justify-between items-center"
-                onClick={() => toggle(index)}
+                className="w-full flex justify-between items-center px-6 py-4 text-left font-semibold text-red-700"
+                onClick={() => toggle(idx)}
+                itemProp="name"
               >
-                <span itemProp="name">{faq.question}</span>
-                <span className="text-xl">{openIndex === index ? '−' : '+'}</span>
+                {faq.question}
+                <span className="text-2xl">{openIndex === idx ? '−' : '+'}</span>
               </button>
-              {openIndex === index && (
-                <div className="px-6 pb-4 text-gray-700 text-sm" itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
-                  <div itemProp="text">{faq.answer}</div>
-                </div>
+
+              {openIndex === idx && (
+                <motion.div
+                  className="px-6 pb-4 text-sm text-white"
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: 'auto', opacity: 1 }}
+                  transition={{ duration: 0.4 }}
+                  itemScope
+                  itemProp="acceptedAnswer"
+                  itemType="https://schema.org/Answer"
+                >
+                  <div itemProp="text" className="text-gray-700">
+                    {faq.answer}
+                  </div>
+                </motion.div>
               )}
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
     </section>
   );
-};
-
-export default FaqAccordion;
+}

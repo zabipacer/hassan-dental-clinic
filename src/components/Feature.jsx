@@ -1,173 +1,173 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import {
-  FaTooth,
-  FaTeethOpen,
-  FaSmile,
-  FaUserMd,
-  FaXRay,
-  FaChild,
-  FaTeeth,
-  FaRegGrinBeam,
-  FaProcedures,
   FaClinicMedical,
-  FaFirstAid,
+  FaTooth,
   FaShieldAlt,
-  FaHeadSideVirus,
-  FaBriefcaseMedical,
-  FaLaptopMedical,
+  FaSmile,
   FaRegLaughBeam,
+  FaTeeth,
+  FaTeethOpen,
+  FaXRay,
+  FaUserMd,
+  FaChild,
+  FaHeadSideVirus,
+  FaFirstAid,
+  FaProcedures,
+  FaBriefcaseMedical,
 } from 'react-icons/fa';
 
+// FeaturedServices component updated for semantic SEO and optimized copywriting for Karachi
 const services = [
-  // Preventive Care
   {
-    title: 'Dental Checkup in Faisalabad',
-    description: 'Regular checkups to maintain oral health.',
-    icon: <FaClinicMedical className="text-3xl text-teal-600" />,
-    link: '/dental-checkup-faisalabad',
+    title: 'Preventive Dental Checkup in Karachi',
+    description: 'Keep your smile healthy with routine oral exams and expert preventive care.',
+    icon: <FaClinicMedical className="text-4xl text-red-500" aria-hidden="true" />,
+    link: '/preventive-dental-checkup-karachi',
   },
   {
-    title: 'Scaling & Polishing',
-    description: 'Remove plaque & stains for healthier gums.',
-    icon: <FaTooth className="text-3xl text-teal-600" />,
-    link: '/scaling-and-polishing-in-faisalabad',
+    title: 'Professional Scaling & Polishing',
+    description: 'Eliminate plaque and surface stains to promote gum health and fresh breath.',
+    icon: <FaTooth className="text-4xl text-red-500" aria-hidden="true" />,
+    link: '/scaling-polishing-karachi',
   },
   {
-    title: 'Fluoride Treatment',
-    description: 'Prevent cavities with fluoride care.',
-    icon: <FaShieldAlt className="text-3xl text-teal-600" />,
-    link: '/Fluoride-Treatment-in-faisalabad',
-  },
-
-  // Cosmetic Dentistry
-  {
-    title: 'Teeth Whitening Faisalabad',
-    description: 'Brighten your smile in one visit.',
-    icon: <FaSmile className="text-3xl text-teal-600" />,
-    link: '/Teeth-whitening-in-faisalabad',
+    title: 'Fluoride Treatment in Karachi',
+    description: 'Strengthen enamel and prevent cavities with our in-office fluoride applications.',
+    icon: <FaShieldAlt className="text-4xl text-red-500" aria-hidden="true" />,
+    link: '/fluoride-treatment-karachi',
   },
   {
-    title: 'Smile Makeover',
-    description: 'Transform your smile with multiple procedures.',
-    icon: <FaRegLaughBeam className="text-3xl text-teal-600" />,
-    link: '/Smile-Makeover-faisalabad',
+    title: 'Advanced Teeth Whitening',
+    description: 'Brighten your smile up to 8 shades in a single visit with our safe whitening system.',
+    icon: <FaSmile className="text-4xl text-red-500" aria-hidden="true" />,
+    link: '/teeth-whitening-karachi',
   },
   {
-    title: 'Veneers in Faisalabad',
-    description: 'Cover imperfections with custom veneers.',
-    icon: <FaSmile className="text-3xl text-teal-600" />,
-    link: '/veneers-faisalabad',
-  },
-
-  // Restorative Dentistry
-  {
-    title: 'Dental Fillings',
-    description: 'Treat cavities with safe, aesthetic fillings.',
-    icon: <FaTooth className="text-3xl text-teal-600" />,
-    link: '/Dental-Fillings-faisalabad',
+    title: 'Custom Smile Makeovers',
+    description: 'Design the perfect smile with veneers, bonding, and orthodontic solutions.',
+    icon: <FaRegLaughBeam className="text-4xl text-red-500" aria-hidden="true" />,
+    link: '/smile-makeover-karachi',
   },
   {
-    title: 'Dental Crowns & Bridges',
-    description: 'Restore damaged or missing teeth.',
-    icon: <FaRegGrinBeam className="text-3xl text-teal-600" />,
-    link: '/Dental-Crown-Bridges-Faisalabad',
+    title: 'Premium Veneers in Karachi',
+    description: 'Cover imperfections with custom-crafted porcelain or composite veneers.',
+    icon: <FaSmile className="text-4xl text-red-500" aria-hidden="true" />,
+    link: '/veneers-karachi',
   },
   {
-    title: 'Dental Implants in Faisalabad',
-    description: 'Permanent solutions for missing teeth.',
-    icon: <FaTeeth className="text-3xl text-teal-600" />,
-    link: '/Dental-implants-Faisalabad',
+    title: 'Tooth-Colored Fillings',
+    description: 'Restore decayed teeth discreetly with durable, aesthetic composite fillings.',
+    icon: <FaTooth className="text-4xl text-red-500" aria-hidden="true" />,
+    link: '/dental-fillings-karachi',
   },
-
-  // Orthodontics
   {
-    title: 'Braces & Aligners',
-    description: 'Straighten your teeth with fixed or removable options.',
-    icon: <FaTeethOpen className="text-3xl text-teal-600" />,
-    link: '/braces-aligners-faisalabad',
+    title: 'Crowns & Bridges Restoration',
+    description: 'Rebuild damaged or missing teeth with natural-looking crowns and bridges.',
+    icon: <FaRegLaughBeam className="text-4xl text-red-500" aria-hidden="true" />,
+    link: '/crowns-bridges-karachi',
   },
-
-  // Root Canal & Surgery
   {
-    title: 'Root Canal Treatment (RCT)',
-    description: 'Pain-free root canal procedures.',
-    icon: <FaXRay className="text-3xl text-teal-600" />,
-    link: '/root-canal-faisalabad',
+    title: 'Dental Implants in Karachi',
+    description: 'Permanent, implant-supported replacements for single or multiple missing teeth.',
+    icon: <FaTeeth className="text-4xl text-red-500" aria-hidden="true" />,
+    link: '/dental-implants-karachi',
+  },
+  {
+    title: 'Orthodontic Braces & Aligners',
+    description: 'Straighten teeth discretely with clear aligners or traditional braces.',
+    icon: <FaTeethOpen className="text-4xl text-red-500" aria-hidden="true" />,
+    link: '/braces-aligners-karachi',
+  },
+  {
+    title: 'Pain-Free Root Canal Treatment',
+    description: 'Save infected teeth with gentle, modern root canal therapy.',
+    icon: <FaXRay className="text-4xl text-red-500" aria-hidden="true" />,
+    link: '/root-canal-karachi',
   },
   {
     title: 'Wisdom Tooth Extraction',
-    description: 'Safe removal of impacted wisdom teeth.',
-    icon: <FaUserMd className="text-3xl text-teal-600" />,
-    link: '/wisdom-tooth-extraction',
+    description: 'Safe and comfortable removal of impacted wisdom teeth under local anesthesia.',
+    icon: <FaUserMd className="text-4xl text-red-500" aria-hidden="true" />,
+    link: '/wisdom-tooth-extraction-karachi',
   },
-
-  // Kids Dentistry
   {
-    title: 'Pediatric Dentistry in Faisalabad',
-    description: 'Gentle dental care for children.',
-    icon: <FaChild className="text-3xl text-teal-600" />,
-    link: '/kids-dentist-faisalabad',
+    title: 'Pediatric Dentistry in Karachi',
+    description: 'Gentle, child-friendly care to set lifelong healthy dental habits.',
+    icon: <FaChild className="text-4xl text-red-500" aria-hidden="true" />,
+    link: '/pediatric-dentistry-karachi',
   },
-
-  // Gum & Periodontal
   {
-    title: 'Gum Disease Treatment',
-    description: 'Treat gingivitis & advanced gum issues.',
-    icon: <FaHeadSideVirus className="text-3xl text-teal-600" />,
-    link: '/gum-disease-treatment',
+    title: 'Gum Disease & Periodontal Care',
+    description: 'Treat gingivitis and advanced periodontal disease with minimally invasive techniques.',
+    icon: <FaHeadSideVirus className="text-4xl text-red-500" aria-hidden="true" />,
+    link: '/gum-disease-treatment-karachi',
   },
-
-  // Emergency Dental Care
   {
-    title: 'Emergency Dentist in Faisalabad',
-    description: '24/7 urgent dental care.',
-    icon: <FaFirstAid className="text-3xl text-teal-600" />,
-    link: '/emergency-dentist-faisalabad',
+    title: 'Emergency Dental Services',
+    description: '24/7 emergency care for toothaches, injuries, and urgent dental needs.',
+    icon: <FaFirstAid className="text-4xl text-red-500" aria-hidden="true" />,
+    link: '/emergency-dentist-karachi',
   },
-
-  // Specialty
   {
     title: 'Maxillofacial Surgery',
-    description: 'Advanced facial and jaw surgeries.',
-    icon: <FaProcedures className="text-3xl text-teal-600" />,
-    link: '/maxillofacial-surgery',
+    description: 'Expert surgical solutions for facial trauma, pathology, and reconstruction.',
+    icon: <FaProcedures className="text-4xl text-red-500" aria-hidden="true" />,
+    link: '/maxillofacial-surgery-karachi',
   },
   {
-    title: 'TMJ / Jaw Pain Treatment',
-    description: 'Relieve chronic jaw pain with expert care.',
-    icon: <FaBriefcaseMedical className="text-3xl text-teal-600" />,
-    link: '/tmj-treatment-faisalabad',
+    title: 'TMJ & Jaw Pain Therapy',
+    description: 'Relieve chronic jaw pain and TMJ disorders with tailored treatments.',
+    icon: <FaBriefcaseMedical className="text-4xl text-red-500" aria-hidden="true" />,
+    link: '/tmj-treatment-karachi',
   },
 ];
 
+const FeaturedServices = () => (
+  <section className="bg-blue-900 py-16" id="services" aria-labelledby="featured-services-title">
+    <div className="max-w-7xl mx-auto px-6">
+      <motion.h2
+        id="featured-services-title"
+        className="text-3xl sm:text-4xl font-bold text-center text-white mb-12"
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.6 }}
+      >
+        Our Featured Dental Services in Karachi
+      </motion.h2>
 
-const FeaturedServices = () => {
-  return (
-    <section className="bg-white py-16" id="services">
-      <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center mb-12 text-blue-800">
-          Our Featured Dental Services
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map(({ title, description, icon, link }) => (
-            <a
-              href={link}
-              key={title}
-              className="group p-6 border border-gray-200 rounded-xl shadow-md hover:shadow-xl hover:border-teal-500 transition-all duration-300 bg-white text-center"
-            >
-              <div className="flex flex-col items-center space-y-4">
-                {icon}
-                <h3 className="text-xl font-semibold text-blue-900 group-hover:text-teal-600 transition-colors duration-200">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {services.map(({ title, description, icon, link }, idx) => (
+          <motion.article
+            key={title}
+            className="group bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl border-2 border-transparent hover:border-red-500 transition-all"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ delay: 0.2 + idx * 0.1, type: 'spring', stiffness: 100 }}
+            whileHover={{ scale: 1.03 }}
+            aria-labelledby={`service-${idx}-title`}
+          >
+            <div className="flex flex-col items-center space-y-4">
+              {React.cloneElement(icon, { 'aria-hidden': true })}
+              <motion.h3
+                id={`service-${idx}-title`}
+                className="text-xl font-semibold text-blue-900 group-hover:text-red-500 text-center"
+              >
+                <a href={link} className="block focus:outline-none focus:ring-2 focus:ring-red-500">
                   {title}
-                </h3>
-                <p className="text-gray-600 text-sm">{description}</p>
-              </div>
-            </a>
-          ))}
-        </div>
+                </a>
+              </motion.h3>
+              <motion.p className="text-gray-600 text-sm text-center">
+                {description}
+              </motion.p>
+            </div>
+          </motion.article>
+        ))}
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default FeaturedServices;
