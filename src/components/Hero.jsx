@@ -180,7 +180,7 @@ export default function HeroSection() {
                     rel="noopener noreferrer"
                     className="text-blue-300 hover:text-blue-200 transition-colors text-sm hover:underline"
                   >
-                    Khanewal Road, Faisalabad
+                   nazimabad karachi
                   </a>
                 </div>
               </div>
