@@ -1,173 +1,160 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import {
-  FaClinicMedical,
-  FaTooth,
-  FaShieldAlt,
-  FaSmile,
-  FaRegLaughBeam,
-  FaTeeth,
-  FaTeethOpen,
-  FaXRay,
-  FaUserMd,
-  FaChild,
-  FaHeadSideVirus,
-  FaFirstAid,
-  FaProcedures,
-  FaBriefcaseMedical,
-} from 'react-icons/fa';
+import { FaClinicMedical, FaTooth, FaShieldAlt, FaSmile, FaRegLaughBeam, FaProcedures } from 'react-icons/fa';
+import { Link } from 'react-router-dom'; // or 'next/link' if using Next.js
 
-// FeaturedServices component updated for semantic SEO and optimized copywriting for Karachi
+// Animation variants
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.15, delayChildren: 0.2 },
+  },
+};
+const cardVariants = {
+  hidden: { opacity: 0, y: 50, scale: 0.9 },
+  visible: { opacity: 1, y: 0, scale: 1, transition: { type: 'spring', stiffness: 120, damping: 16 } },
+  hover: { scale: 1.05, rotate: [0, 2, -2, 0], boxShadow: '0px 16px 32px rgba(0,0,0,0.25)', transition: { duration: 0.4, ease: 'easeInOut' } },
+};
+const titleVariants = {
+  hidden: { opacity: 0, y: -20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } },
+};
+
+// Structured data (JSON-LD)
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Featured Dental Services",
+  "description": "Comprehensive dental care from preventive checkups to advanced digital dentistry, ensuring the highest standards in oral health and patient comfort.",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Dental Service Catalog",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Preventive Checkup", "description": "Expert evaluation, X-rays, and personalized oral hygiene guidance." } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Scaling & Polishing", "description": "Deep cleaning to remove plaque, tartar, and stains for fresher breath." } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fluoride Treatment", "description": "Protective fluoride varnish to strengthen enamel and prevent decay." } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Teeth Whitening", "description": "Safe in-office bleaching for a brighter, more confident smile." } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Smile Makeover", "description": "Customized veneers, bonding, and orthodontics for a complete aesthetic transformation." } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Digital Dentistry", "description": "Cutting-edge 3D imaging and CAD/CAM solutions for precision restorations." } }
+    ]
+  }
+};
+
 const services = [
-  {
-    title: 'Preventive Dental Checkup in Karachi',
-    description: 'Keep your smile healthy with routine oral exams and expert preventive care.',
-    icon: <FaClinicMedical className="text-4xl text-red-500" aria-hidden="true" />,
-    link: '/preventive-dental-checkup-karachi',
-  },
-  {
-    title: 'Professional Scaling & Polishing',
-    description: 'Eliminate plaque and surface stains to promote gum health and fresh breath.',
-    icon: <FaTooth className="text-4xl text-red-500" aria-hidden="true" />,
-    link: '/scaling-polishing-karachi',
-  },
-  {
-    title: 'Fluoride Treatment in Karachi',
-    description: 'Strengthen enamel and prevent cavities with our in-office fluoride applications.',
-    icon: <FaShieldAlt className="text-4xl text-red-500" aria-hidden="true" />,
-    link: '/fluoride-treatment-karachi',
-  },
-  {
-    title: 'Advanced Teeth Whitening',
-    description: 'Brighten your smile up to 8 shades in a single visit with our safe whitening system.',
-    icon: <FaSmile className="text-4xl text-red-500" aria-hidden="true" />,
-    link: '/teeth-whitening-karachi',
-  },
-  {
-    title: 'Custom Smile Makeovers',
-    description: 'Design the perfect smile with veneers, bonding, and orthodontic solutions.',
-    icon: <FaRegLaughBeam className="text-4xl text-red-500" aria-hidden="true" />,
-    link: '/smile-makeover-karachi',
-  },
-  {
-    title: 'Premium Veneers in Karachi',
-    description: 'Cover imperfections with custom-crafted porcelain or composite veneers.',
-    icon: <FaSmile className="text-4xl text-red-500" aria-hidden="true" />,
-    link: '/veneers-karachi',
-  },
-  {
-    title: 'Tooth-Colored Fillings',
-    description: 'Restore decayed teeth discreetly with durable, aesthetic composite fillings.',
-    icon: <FaTooth className="text-4xl text-red-500" aria-hidden="true" />,
-    link: '/dental-fillings-karachi',
-  },
-  {
-    title: 'Crowns & Bridges Restoration',
-    description: 'Rebuild damaged or missing teeth with natural-looking crowns and bridges.',
-    icon: <FaRegLaughBeam className="text-4xl text-red-500" aria-hidden="true" />,
-    link: '/crowns-bridges-karachi',
-  },
-  {
-    title: 'Dental Implants in Karachi',
-    description: 'Permanent, implant-supported replacements for single or multiple missing teeth.',
-    icon: <FaTeeth className="text-4xl text-red-500" aria-hidden="true" />,
-    link: '/dental-implants-karachi',
-  },
-  {
-    title: 'Orthodontic Braces & Aligners',
-    description: 'Straighten teeth discretely with clear aligners or traditional braces.',
-    icon: <FaTeethOpen className="text-4xl text-red-500" aria-hidden="true" />,
-    link: '/braces-aligners-karachi',
-  },
-  {
-    title: 'Pain-Free Root Canal Treatment',
-    description: 'Save infected teeth with gentle, modern root canal therapy.',
-    icon: <FaXRay className="text-4xl text-red-500" aria-hidden="true" />,
-    link: '/root-canal-karachi',
-  },
-  {
-    title: 'Wisdom Tooth Extraction',
-    description: 'Safe and comfortable removal of impacted wisdom teeth under local anesthesia.',
-    icon: <FaUserMd className="text-4xl text-red-500" aria-hidden="true" />,
-    link: '/wisdom-tooth-extraction-karachi',
-  },
-  {
-    title: 'Pediatric Dentistry in Karachi',
-    description: 'Gentle, child-friendly care to set lifelong healthy dental habits.',
-    icon: <FaChild className="text-4xl text-red-500" aria-hidden="true" />,
-    link: '/pediatric-dentistry-karachi',
-  },
-  {
-    title: 'Gum Disease & Periodontal Care',
-    description: 'Treat gingivitis and advanced periodontal disease with minimally invasive techniques.',
-    icon: <FaHeadSideVirus className="text-4xl text-red-500" aria-hidden="true" />,
-    link: '/gum-disease-treatment-karachi',
-  },
-  {
-    title: 'Emergency Dental Services',
-    description: '24/7 emergency care for toothaches, injuries, and urgent dental needs.',
-    icon: <FaFirstAid className="text-4xl text-red-500" aria-hidden="true" />,
-    link: '/emergency-dentist-karachi',
-  },
-  {
-    title: 'Maxillofacial Surgery',
-    description: 'Expert surgical solutions for facial trauma, pathology, and reconstruction.',
-    icon: <FaProcedures className="text-4xl text-red-500" aria-hidden="true" />,
-    link: '/maxillofacial-surgery-karachi',
-  },
-  {
-    title: 'TMJ & Jaw Pain Therapy',
-    description: 'Relieve chronic jaw pain and TMJ disorders with tailored treatments.',
-    icon: <FaBriefcaseMedical className="text-4xl text-red-500" aria-hidden="true" />,
-    link: '/tmj-treatment-karachi',
-  },
+  { icon: FaClinicMedical, title: 'Preventive Checkup', desc: 'Expert evaluation, X-rays, & personalized oral hygiene guidance', link: '/preventive' },
+  { icon: FaTooth, title: 'Scaling & Polishing', desc: 'Deep cleaning to remove plaque, tartar, & surface stains', link: '/scaling' },
+  { icon: FaShieldAlt, title: 'Fluoride Treatment', desc: 'Protective fluoride varnish to strengthen enamel & prevent decay', link: '/fluoride' },
+  { icon: FaSmile, title: 'Teeth Whitening', desc: 'Safe in-office bleaching for a brighter, more confident smile', link: '/whitening' },
+  { icon: FaRegLaughBeam, title: 'Smile Makeover', desc: 'Customized veneers, bonding, & orthodontics for aesthetic transformation', link: '/smile-makeover' },
+  { icon: FaProcedures, title: 'Digital Dentistry', desc: 'Cutting-edge 3D imaging & CAD/CAM precision restorations', link: '/digital' },
 ];
 
-const FeaturedServices = () => (
-  <section className="bg-blue-900 py-16" id="services" aria-labelledby="featured-services-title">
-    <div className="max-w-7xl mx-auto px-6">
-      <motion.h2
-        id="featured-services-title"
-        className="text-3xl sm:text-4xl font-bold text-center text-white mb-12"
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.6 }}
-      >
-        Our Featured Dental Services in Karachi
-      </motion.h2>
+export default function FeaturedServices() {
+  return (
+    <section
+      id="services"
+      aria-labelledby="services-title"
+      className="bg-gradient-to-br from-black via-gray-900 to-black py-24"
+      itemScope
+      itemType="https://schema.org/Service"
+      itemProp="hasOfferCatalog"
+    >
+      {/* JSON-LD for SEO */}
+      <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {services.map(({ title, description, icon, link }, idx) => (
-          <motion.article
-            key={title}
-            className="group bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl border-2 border-transparent hover:border-red-500 transition-all"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ delay: 0.2 + idx * 0.1, type: 'spring', stiffness: 100 }}
-            whileHover={{ scale: 1.03 }}
-            aria-labelledby={`service-${idx}-title`}
+      <div className="max-w-7xl mx-auto px-6 text-center text-gray-200">
+        <header>
+          <motion.h2
+            id="services-title"
+            className="text-3xl md:text-4xl font-bold text-white mb-6 font-poppins"
+            variants={titleVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            itemProp="name"
           >
-            <div className="flex flex-col items-center space-y-4">
-              {React.cloneElement(icon, { 'aria-hidden': true })}
-              <motion.h3
-                id={`service-${idx}-title`}
-                className="text-xl font-semibold text-blue-900 group-hover:text-red-500 text-center"
-              >
-                <a href={link} className="block focus:outline-none focus:ring-2 focus:ring-red-500">
-                  {title}
-                </a>
-              </motion.h3>
-              <motion.p className="text-gray-600 text-sm text-center">
-                {description}
-              </motion.p>
-            </div>
-          </motion.article>
-        ))}
-      </div>
-    </div>
-  </section>
-);
+            Our Featured Dental Services
+          </motion.h2>
+          <motion.p
+            className="mb-12 text-lg max-w-3xl mx-auto leading-relaxed"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            itemProp="description"
+          >
+            At Alpha Practice, we combine state-of-the-art technology with compassionate care to provide a full spectrum of dental solutions. From routine checkups that catch issues early to advanced digital dentistry techniques for seamless restorations, our goal is to ensure your smile is healthy, beautiful, and long-lasting.
+          </motion.p>
+        </header>
 
-export default FeaturedServices;
+        <motion.ul
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 list-none"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          role="list"
+        >
+          {services.map(({ icon: Icon, title, desc, link }, idx) => (
+            <motion.li
+              key={title}
+              className="group relative bg-gray-800/40 backdrop-blur-md border border-gray-700 rounded-3xl p-8 cursor-pointer overflow-hidden"
+              variants={cardVariants}
+              whileHover="hover"
+              role="listitem"
+              itemScope
+              itemType="https://schema.org/Service"
+              itemProp="itemOffered"
+            >
+              <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-br from-white/10 to-white/5 opacity-0 group-hover:opacity-25 transition-opacity" />
+              <figure className="relative flex flex-col items-center text-center">
+                <Icon className="w-14 h-14 text-teal-400 mb-4" aria-hidden="true" />
+                <figcaption>
+                  <Link to={link} aria-label={`Learn more about ${title}`} className="focus:outline-none">
+                    <motion.h3
+                      className="text-xl font-semibold text-white mb-2 group-hover:text-teal-300 font-poppins"
+                      initial={{ y: 10, opacity: 0 }}
+                      whileInView={{ y: 0, opacity: 1 }}
+                      transition={{ delay: 0.2 + idx * 0.1, duration: 0.6 }}
+                      itemProp="name"
+                    >
+                      {title}
+                    </motion.h3>
+                  </Link>
+                  <motion.p
+                    className="text-gray-300 text-sm mb-4 max-w-xs"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ delay: 0.4 + idx * 0.1, duration: 0.8 }}
+                    itemProp="description"
+                  >
+                    {desc}
+                  </motion.p>
+                  <motion.span
+                    className="text-teal-300 font-medium"
+                    initial={{ x: -8, opacity: 0 }}
+                    whileHover={{ x: 0, opacity: 1 }}
+                    transition={{ duration: 0.3 }}
+                    aria-hidden="true"
+                  >
+                    → Learn More
+                  </motion.span>
+                </figcaption>
+              </figure>
+            </motion.li>
+          ))}
+        </motion.ul>
+
+        <motion.div
+          className="mt-16"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+        >
+          <p className="text-gray-400 text-sm italic">
+            Looking for personalized care? <Link to="/contact" className="text-teal-300 font-medium underline">Contact our team</Link> today to schedule your consultation and start your journey to optimal oral health.
+          </p>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
