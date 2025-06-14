@@ -16,6 +16,8 @@ const columns = {
 };
 
 export default function Footer() {
+  const phones = ['+923336194850', '+923009634850', '+923154151515'];
+
   return (
     <footer className="relative bg-gradient-to-br from-black via-gray-900 to-black text-white pt-16 pb-8 font-poppins">
       {/* Dot Pattern Background */}
@@ -29,13 +31,25 @@ export default function Footer() {
             <FaMapMarkerAlt className="text-teal-400 mt-1" />
             Shop #10, Mohammad Arcade, Chungi No.9, Multan, 60000
           </p>
-          <p className="text-sm mb-3 flex items-center gap-2">
-            <FaPhone className="text-teal-400" />
-            <a href="tel:+923336194850" className="hover:underline">0333 619 4850</a>
-          </p>
+          {phones.map((num) => (
+            <p key={num} className="text-sm mb-2 flex items-center gap-2">
+              <FaPhone className="text-teal-400" />
+              <a
+                href={`tel:${num}`}
+                className="hover:underline cursor-pointer"
+              >
+                {num.replace('+', '')}
+              </a>
+            </p>
+          ))}
           <p className="text-sm flex items-center gap-2">
             <FaEnvelope className="text-teal-400" />
-            <a href="mailto:info@hassandentalsurgery.pk" className="hover:underline">info@hassandentalsurgery.pk</a>
+            <a
+              href="mailto:info@hassandentalsurgery.pk"
+              className="hover:underline"
+            >
+              info@hassandentalsurgery.pk
+            </a>
           </p>
         </motion.div>
 
@@ -65,13 +79,28 @@ export default function Footer() {
         <motion.div {...columns}>
           <h4 className="text-lg font-bold mb-4">Connect With Us</h4>
           <div className="flex space-x-4 mb-4">
-            <a href="https://www.facebook.com/HassanDentalSurgery" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <a
+              href="https://www.facebook.com/p/DR-IMRAN-ZAFER-BUCHA-Dental-surgery-100086570136393/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
               <FaFacebookF className="text-lg hover:text-blue-400" />
             </a>
-            <a href="https://www.instagram.com/HassanDentalSurgery" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <a
+              href="https://www.instagram.com/drimranbucha76"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
               <FaInstagram className="text-lg hover:text-pink-400" />
             </a>
-            <a href="https://wa.me/923336194850" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <a
+              href="https://api.whatsapp.com/send?phone=923336194850"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
+            >
               <FaWhatsapp className="text-lg hover:text-green-400" />
             </a>
           </div>
@@ -86,5 +115,5 @@ export default function Footer() {
         © {new Date().getFullYear()} Hassan Dental Surgery. All rights reserved.
       </div>
     </footer>
-  );
+);
 }

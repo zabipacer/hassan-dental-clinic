@@ -1,14 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaClinicMedical, FaTooth, FaShieldAlt, FaSmile, FaRegLaughBeam, FaProcedures } from 'react-icons/fa';
+import { FaClinicMedical, FaTooth, FaShieldAlt, FaSmile, FaRegLaughBeam, FaProcedures, FaPhoneAlt, FaTimes } from 'react-icons/fa';
 import { Link } from 'react-router-dom'; // or 'next/link' if using Next.js
 
 // Animation variants
 const containerVariants = {
   hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.15, delayChildren: 0.2 },
-  },
+  visible: { transition: { staggerChildren: 0.15, delayChildren: 0.2 } },
 };
 const cardVariants = {
   hidden: { opacity: 0, y: 50, scale: 0.9 },
@@ -50,19 +48,19 @@ const services = [
 ];
 
 export default function FeaturedServices() {
+  const [showContacts, setShowContacts] = useState(false);
+  const toggleContacts = () => setShowContacts(prev => !prev);
+
   return (
     <section
       id="services"
       aria-labelledby="services-title"
-      className="bg-gradient-to-br from-black via-gray-900 to-black py-24"
-      itemScope
-      itemType="https://schema.org/Service"
-      itemProp="hasOfferCatalog"
+      className="bg-gradient-to-br from-black via-gray-900 to-black py-24 text-gray-200"
     >
       {/* JSON-LD for SEO */}
       <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
 
-      <div className="max-w-7xl mx-auto px-6 text-center text-gray-200">
+      <div className="max-w-7xl mx-auto px-6 text-center">
         <header>
           <motion.h2
             id="services-title"
@@ -71,7 +69,6 @@ export default function FeaturedServices() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
-            itemProp="name"
           >
             Our Featured Dental Services
           </motion.h2>
@@ -80,7 +77,6 @@ export default function FeaturedServices() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
-            itemProp="description"
           >
             At Alpha Practice, we combine state-of-the-art technology with compassionate care to provide a full spectrum of dental solutions. From routine checkups that catch issues early to advanced digital dentistry techniques for seamless restorations, our goal is to ensure your smile is healthy, beautiful, and long-lasting.
           </motion.p>
@@ -101,21 +97,17 @@ export default function FeaturedServices() {
               variants={cardVariants}
               whileHover="hover"
               role="listitem"
-              itemScope
-              itemType="https://schema.org/Service"
-              itemProp="itemOffered"
             >
-              <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-br from-white/10 to-white/5 opacity-0 group-hover:opacity-25 transition-opacity" />
+              <div aria-hidden className="absolute inset-0 bg-gradient-to-br from-white/10 to-white/5 opacity-0 group-hover:opacity-25 transition-opacity" />
               <figure className="relative flex flex-col items-center text-center">
                 <Icon className="w-14 h-14 text-teal-400 mb-4" aria-hidden="true" />
                 <figcaption>
-                  <Link to={link} aria-label={`Learn more about ${title}`} className="focus:outline-none">
+                  <Link to={link} aria-label={`Learn more about ${title}`}>
                     <motion.h3
                       className="text-xl font-semibold text-white mb-2 group-hover:text-teal-300 font-poppins"
                       initial={{ y: 10, opacity: 0 }}
                       whileInView={{ y: 0, opacity: 1 }}
                       transition={{ delay: 0.2 + idx * 0.1, duration: 0.6 }}
-                      itemProp="name"
                     >
                       {title}
                     </motion.h3>
@@ -125,7 +117,6 @@ export default function FeaturedServices() {
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ delay: 0.4 + idx * 0.1, duration: 0.8 }}
-                    itemProp="description"
                   >
                     {desc}
                   </motion.p>
@@ -134,7 +125,6 @@ export default function FeaturedServices() {
                     initial={{ x: -8, opacity: 0 }}
                     whileHover={{ x: 0, opacity: 1 }}
                     transition={{ duration: 0.3 }}
-                    aria-hidden="true"
                   >
                     → Learn More
                   </motion.span>
@@ -144,16 +134,44 @@ export default function FeaturedServices() {
           ))}
         </motion.ul>
 
-        <motion.div
-          className="mt-16"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-        >
-          <p className="text-gray-400 text-sm italic">
-            Looking for personalized care? <Link to="/contact" className="text-teal-300 font-medium underline">Contact our team</Link> today to schedule your consultation and start your journey to optimal oral health.
-          </p>
+        <motion.div className="mt-16">
+          <button
+            onClick={toggleContacts}
+            className="text-teal-300 cursor-pointer font-medium underline focus:outline-none"
+          >
+          Need help? Contact our team
+          </button>
         </motion.div>
+
+        {/* Contact Box Modal */}
+        {showContacts && (
+          <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
+            <motion.div
+              className="bg-gray-900 rounded-2xl p-8 space-y-4 w-80"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1, transition: { duration: 0.3 } }}
+            >
+              <div className="flex justify-end">
+                <button onClick={toggleContacts} className="text-gray-400 hover:text-white">
+                  <FaTimes size={20} />
+                </button>
+              </div>
+              <h3 className="text-white text-lg font-semibold mb-2">Call Us:</h3>
+              <ul className="space-y-2">
+                {['+923336194850', '+923009634850', '+923154151515'].map((num) => (
+                  <li key={num}>
+                    <a
+                      href={`tel:${num}`}
+                      className="flex items-center text-teal-300 hover:text-teal-100"
+                    >
+                      <FaPhoneAlt className="mr-2" /> {num}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          </div>
+        )}
       </div>
     </section>
   );

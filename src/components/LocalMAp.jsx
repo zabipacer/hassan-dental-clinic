@@ -6,7 +6,7 @@ const LOCAL_INFO = {
   name: 'Hassan Dental Surgery',
   subtitle: 'Dr. Imran Zafer Bucha',
   address: 'Shop #10, Mohammad Arcade, Chungi No. 9, Multan, 60000',
-  phone: '+923336194850',
+  phones: ['+923336194850', '+923009634850', '+923154151515'],
   hours: 'Closed ⋅ Opens 5 PM',
   rating: 5.0,
   reviewCount: 26,
@@ -24,7 +24,7 @@ export default function LocalSEOSection() {
       className="py-20 bg-gradient-to-r from-gray-900 via-gray-800 to-black text-white font-poppins overflow-hidden"
       aria-labelledby="location-title"
     >
-      <div className="max-w-6xl mx-auto px-6 lg:flex lg:space-x-12 items-center relative">
+      <div className="max-w-6xl mx-auto px-6 lg:flex lg:space-x-12 items-start relative">
         {/* Map Embed */}
         <motion.div
           className="w-full lg:w-1/2 rounded-lg overflow-hidden shadow-2xl"
@@ -34,7 +34,7 @@ export default function LocalSEOSection() {
         >
           <iframe
             title="Hassan Dental Surgery Location"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.0000000000005!2d71.475900!3d30.195900!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0000000000000000!2sHassan%20Dental%20Surgery!5e0!3m2!1sen!2s!4v0000000000000!5m2!1sen!2s"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3447.9626481560726!2d71.4657359!3d30.2096135!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x393b335a53a581ad%3A0x5b72f7229bc81e60!2sHassan%20Dental%20Surgery(%20dr%20Imran%20zafer%20bucha)%20Mohammad%20arcade%20chungi%20no%209%20multan!5e0!3m2!1sen!2s!4v1749888454852!5m2!1sen!2s"
             width="100%"
             height="350"
             style={{ border: 0 }}
@@ -58,21 +58,22 @@ export default function LocalSEOSection() {
           <ul className="space-y-4 text-gray-300 text-lg">
             <li className="flex items-start gap-3">
               <MapPin className="w-6 h-6 text-teal-400 flex-shrink-0" aria-hidden="true" />
-              <address className="not-italic">
-                {LOCAL_INFO.address}
-              </address>
+              <address className="not-italic">{LOCAL_INFO.address}</address>
             </li>
-            <li className="flex items-start gap-3">
-              <Phone className="w-6 h-6 text-teal-400 flex-shrink-0" aria-hidden="true" />
-              <a href={`tel:${LOCAL_INFO.phone}`} className="underline">
-                {LOCAL_INFO.phone.replace('+', '')}
-              </a>
-            </li>
+
+            {/* Multiple Phone Numbers */}
+            {LOCAL_INFO.phones.map((num) => (
+              <li key={num} className="flex items-start gap-3">
+                <Phone className="w-6 h-6 text-teal-400 flex-shrink-0" aria-hidden="true" />
+                <a href={`tel:${num}`} className="underline cursor-pointer">
+                  {num.replace('+', '')}
+                </a>
+              </li>
+            ))}
+
             <li className="flex items-start gap-3">
               <Star className="w-6 h-6 text-yellow-400 flex-shrink-0" aria-hidden="true" />
-              <span>
-                {LOCAL_INFO.rating} ★ ({LOCAL_INFO.reviewCount} Google reviews)
-              </span>
+              <span>{LOCAL_INFO.rating} ★ ({LOCAL_INFO.reviewCount} Google reviews)</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="w-6 h-6 text-teal-400 flex-shrink-0" aria-hidden="true">⚡</span>
@@ -91,7 +92,7 @@ export default function LocalSEOSection() {
                 "@context": "https://schema.org",
                 "@type": "Dentist",
                 name: LOCAL_INFO.name,
-                telephone: LOCAL_INFO.phone,
+                telephone: LOCAL_INFO.phones,
                 address: {
                   "@type": "PostalAddress",
                   streetAddress: "Shop #10, Mohammad Arcade, Chungi No. 9",

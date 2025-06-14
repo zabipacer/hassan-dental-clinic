@@ -14,6 +14,7 @@ import TestimonialsA from './components/ApiTestimonial'
 import AboutSection from './components/Why'
 import AboutDoctor from './components/AboutDoctor'
 import HassanGallery from './components/HassanGallery'
+import BeforeAfterGallery from './components/BeforeAfter'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -27,6 +28,7 @@ function App() {
 <AboutSection/>
 <HassanGallery/>
 <Testimonials/>
+<BeforeAfterGallery/>
 <LocalSEOSection/>
 <FaqAccordion/>
 

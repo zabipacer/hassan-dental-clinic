@@ -50,7 +50,7 @@ export default function HeroSection() {
       >
         <div className="w-3/4 md:w-full h-full rounded-xl overflow-hidden shadow-2xl">
           <img
-            src="/buca.jpg"
+            src="/polish.webp"
             alt="Dr. Imran Zafer Bucha portrait"
             className="w-full h-full object-cover"
             loading="eager"

@@ -16,9 +16,18 @@ const doctorJsonLd = {
   "name": "Dr. Imran Bucha",
   "image": "https://example.com/images/dr-imran-bucha.jpg",
   "medicalSpecialty": "Dentistry",
-  "description": "Dr. Imran Bucha is a highly experienced dentist specializing in restorative and cosmetic dentistry with over a decade of patient-focused care.",
-  "alumniOf": "University of Lahore, Faculty of Dental Sciences",
-  "award": ["Best Restorative Dentist Award 2022", "Community Dental Outreach Excellence 2020"],
+  "description": "Dr. Imran Bucha has over 25 years of experience in restorative and cosmetic dentistry, integrating advanced digital techniques with patient-focused care since 2000.",
+  "alumniOf": [
+    "Bahauddin Zakariya University",
+    "Nishtar Medical College"
+  ],
+  "hasCredential": [
+    "Certificate in Plantology",
+    "Endodontist Certification",
+    "Conservative Dentistry Certification",
+    "Prosthodontist Certification",
+    "Invisible Aligners Training"
+  ],
   "url": "https://example.com/about/dr-imran-bucha"
 };
 
@@ -34,9 +43,10 @@ export default function AboutDoctor() {
       {/* JSON-LD for SEO */}
       <script type="application/ld+json">{JSON.stringify(doctorJsonLd)}</script>
 
-      <div className="max-w-6xl mx-auto flex flex-col-reverse lg:flex-row items-center lg:items-start gap-10 lg:gap-16">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-10 items-center">
+        {/* Image Column */}
         <motion.div
-          className="w-full lg:w-1/2 flex-shrink-0"
+          className="col-span-1 lg:col-span-2"
           variants={fadeInUp}
           initial="hidden"
           whileInView="visible"
@@ -45,13 +55,14 @@ export default function AboutDoctor() {
           <img
             src="/buca.jpg"
             alt="Dr. Imran Bucha"
-            className="rounded-3xl shadow-2xl w-full h-auto object-cover aspect-square"
+            className="rounded-3xl shadow-2xl w-full h-auto object-cover"
             itemProp="image"
           />
         </motion.div>
 
+        {/* Content Column */}
         <motion.div
-          className="w-full lg:w-1/2"
+          className="col-span-1 lg:col-span-3"
           variants={fadeInUp}
           initial="hidden"
           whileInView="visible"
@@ -59,41 +70,48 @@ export default function AboutDoctor() {
         >
           <h2
             id="about-doctor-title"
-            className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 font-poppins leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 font-poppins leading-tight"
             itemProp="name"
           >
             Meet Dr. Imran Bucha
           </h2>
-          <p className="text-base sm:text-lg md:text-xl mb-8 max-w-prose leading-relaxed" itemProp="description">
-            With over 10 years of dedicated practice, Dr. Imran Bucha excels in restorative and cosmetic dentistry. A graduate of the University of Lahore’s Faculty of Dental Sciences, he integrates advanced digital techniques with personalized care to ensure every patient achieves a healthy, confident smile.
+          <p className="text-lg sm:text-xl mb-10 leading-relaxed max-w-prose" itemProp="description">
+            With over 25 years of dedicated practice since graduating in 2000, Dr. Imran Bucha earned his degrees from Bahauddin Zakariya University and Nishtar Medical College. He integrates advanced digital techniques with personalized care to ensure every patient achieves a healthy, confident smile.
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-            <motion.div className="flex flex-col items-center p-6 bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl" variants={fadeInUp}>
-              <FaUserMd className="w-12 h-12 text-teal-400 mb-4" aria-hidden="true" />
-              <h3 className="text-white text-lg font-semibold mb-2" itemProp="alumniOf">Education</h3>
-              <p className="text-gray-300 text-sm text-center">University of Lahore, Faculty of Dental Sciences</p>
+          {/* Cards Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-10">
+            {/* Education Card */}
+            <motion.div className="flex flex-col items-start p-8 bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl h-full" variants={fadeInUp}>
+              <FaUserMd className="w-10 h-10 text-teal-400 mb-4" aria-hidden="true" />
+              <h3 className="text-white text-xl font-semibold mb-2" itemProp="alumniOf">Education</h3>
+              <p className="text-gray-300 text-sm">Bahauddin Zakariya University (2000)<br/>Nishtar Medical College</p>
             </motion.div>
 
-            <motion.div className="flex flex-col items-center p-6 bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl" variants={fadeInUp}>
-              <FaCertificate className="w-12 h-12 text-teal-400 mb-4" aria-hidden="true" />
-              <h3 className="text-white text-lg font-semibold mb-2">Awards</h3>
-              <ul className="text-gray-300 text-sm text-center list-disc list-inside space-y-1">
-                <li>Best Restorative Dentist Award 2022</li>
-                <li>Community Dental Outreach Excellence 2020</li>
+            {/* Certificates Card */}
+            <motion.div className="flex flex-col items-start p-8 bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl h-full" variants={fadeInUp}>
+              <FaCertificate className="w-10 h-10 text-teal-400 mb-4" aria-hidden="true" />
+              <h3 className="text-white text-xl font-semibold mb-2">Certificates</h3>
+              <ul className="text-gray-300 text-sm list-disc list-inside space-y-1">
+                <li>Certificate in Plantology</li>
+                <li>Endodontist Certification</li>
+                <li>Conservative Dentistry Certification</li>
+                <li>Prosthodontist Certification</li>
+                <li>Invisible Aligners Training</li>
               </ul>
             </motion.div>
 
-            <motion.div className="flex flex-col items-center p-6 bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl" variants={fadeInUp}>
-              <FaStethoscope className="w-12 h-12 text-teal-400 mb-4" aria-hidden="true" />
-              <h3 className="text-white text-lg font-semibold mb-2" itemProp="medicalSpecialty">Specialty</h3>
-              <p className="text-gray-300 text-sm text-center">Restorative & Cosmetic Dentistry</p>
+            {/* Specialty Card */}
+            <motion.div className="flex flex-col items-start p-8 bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl h-full" variants={fadeInUp}>
+              <FaStethoscope className="w-10 h-10 text-teal-400 mb-4" aria-hidden="true" />
+              <h3 className="text-white text-xl font-semibold mb-2" itemProp="medicalSpecialty">Specialty</h3>
+              <p className="text-gray-300 text-sm">Restorative & Cosmetic Dentistry</p>
             </motion.div>
           </div>
 
           <Link
-            to="https://wa.me/+923336194850"
-            className="inline-block px-6 py-3 sm:px-8 sm:py-4 bg-teal-400 text-black font-medium rounded-full hover:shadow-2xl transition-shadow text-sm sm:text-base lg:text-lg"
+            to="https://api.whatsapp.com/send?phone=923336194850"
+            className="inline-block px-8 py-4 bg-teal-400 text-black font-medium rounded-full hover:shadow-2xl transition-shadow text-base"
             aria-label="Book an appointment with Dr. Imran Bucha"
           >
             Book an Appointment

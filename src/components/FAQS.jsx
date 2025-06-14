@@ -9,7 +9,7 @@ const faqs = [
   },
   {
     question: 'How do I schedule an appointment?',
-    answer: 'Call us at 0333 6194850, message us on WhatsApp, or click the “Book Your Appointment” button on our site to choose a convenient time.',
+    answer: 'Call us at 0333 619 4850, 0300 963 4850, or 0315 415 1515; message us on WhatsApp via https://api.whatsapp.com/send?phone=923336194850, https://api.whatsapp.com/send?phone=923009634850, or https://api.whatsapp.com/send?phone=923154151515; or click the “Book Your Appointment” button on our site to choose a convenient time.',
   },
   {
     question: 'Are your clinics child-friendly?',
@@ -17,22 +17,40 @@ const faqs = [
   },
   {
     question: 'What payment options are available?',
-    answer: 'We accept cash, major credit/debit cards, and partner with leading dental insurance providers. Ask our front desk for flexible payment plans.',
+    answer: 'We accept cash, EasyPaisa, JazzCash, and bank transfers via QR code scanning or direct transfer. Please ask our front desk for detailed instructions.',
   },
   {
-    question: 'Do you offer sedation dentistry?',
-    answer: 'Yes, we offer oral sedation and nitrous oxide (laughing gas) for patients with dental anxiety. Discuss your needs during booking.',
+    question: 'Do you provide pain management for surgical procedures?',
+    answer: 'We provide pain-free local anesthesia and perform surgical intervention for conditions ranging from minor inspections to major procedures, all under local anesthesia for your comfort.',
   },
 ];
 
 const faqVariants = {
-  closed: { height: 0, opacity: 0, transition: { duration: 0.3, ease: 'easeInOut' } },
-  open: { height: 'auto', opacity: 1, transition: { duration: 0.5, ease: 'easeInOut' } },
+  closed: { height: 0, opacity: 0, transition: { duration: 0.4, ease: 'easeInOut' } },
+  open: { height: 'auto', opacity: 1, transition: { duration: 0.6, ease: 'easeInOut' } },
 };
 
 export default function FaqAccordion() {
   const [openIndex, setOpenIndex] = useState(null);
   const toggle = (idx) => setOpenIndex(openIndex === idx ? null : idx);
+
+  // Helper to render clickable links
+  const renderAnswer = (text) =>
+    text.split(/(https?:\/\/[^\s]+)/g).map((part, i) =>
+      part.startsWith('http') ? (
+        <a
+          key={i}
+          href={part}
+          className="text-teal-400 underline hover:text-teal-300 transition"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {part}
+        </a>
+      ) : (
+        part
+      )
+    );
 
   return (
     <section
@@ -62,7 +80,7 @@ export default function FaqAccordion() {
           >
             <button
               onClick={() => toggle(idx)}
-              className="w-full flex justify-between items-center px-6 py-4 text-left text-lg font-semibold hover:bg-gray-700 transition-colors"
+              className="w-full flex justify-between items-center px-6 py-4 text-left text-lg font-semibold hover:bg-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-gray-800"
               itemProp="name"
               aria-expanded={openIndex === idx}
             >
@@ -71,7 +89,11 @@ export default function FaqAccordion() {
                 animate={{ rotate: openIndex === idx ? 180 : 0 }}
                 transition={{ duration: 0.3 }}
               >
-                {openIndex === idx ? <ChevronUp className="w-5 h-5 text-teal-400" /> : <ChevronDown className="w-5 h-5 text-teal-400" />}
+                {openIndex === idx ? (
+                  <ChevronUp className="w-5 h-5 text-teal-400" />
+                ) : (
+                  <ChevronDown className="w-5 h-5 text-teal-400" />
+                )}
               </motion.span>
             </button>
 
@@ -83,11 +105,12 @@ export default function FaqAccordion() {
                   initial="closed"
                   animate="open"
                   exit="closed"
+                  layout
                   itemScope
                   itemProp="acceptedAnswer"
                   itemType="https://schema.org/Answer"
                 >
-                  <div itemProp="text">{faq.answer}</div>
+                  <div itemProp="text">{renderAnswer(faq.answer)}</div>
                 </motion.div>
               )}
             </AnimatePresence>
