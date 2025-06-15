@@ -53,7 +53,7 @@ export default function AboutDoctor() {
           viewport={{ once: true, amount: 0.3 }}
         >
           <img
-            src="/buca.jpg"
+            src="/Doctitrbuchaimage.jpg"
             alt="Dr. Imran Bucha"
             className="rounded-3xl shadow-2xl w-full h-auto object-cover"
             itemProp="image"

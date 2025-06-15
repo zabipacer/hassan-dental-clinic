@@ -9,7 +9,7 @@ const faqs = [
   },
   {
     question: 'How do I schedule an appointment?',
-    answer: 'Call us at 0333 619 4850, 0300 963 4850, or 0315 415 1515; message us on WhatsApp via https://api.whatsapp.com/send?phone=923336194850, https://api.whatsapp.com/send?phone=923009634850, or https://api.whatsapp.com/send?phone=923154151515; or click the “Book Your Appointment” button on our site to choose a convenient time.',
+    answer: 'Call us at 0333 619 4850, 0300 963 4850, or 0315 415 1515; message us on WhatsApp via https://api.whatsapp.com/send?phone=923336194850 (Doctor), or https://api.whatsapp.com/send?phone=923154151515 (Assistant); or click the “Book Your Appointment” button on our site to choose a convenient time.',
   },
   {
     question: 'Are your clinics child-friendly?',

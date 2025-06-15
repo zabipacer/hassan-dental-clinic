@@ -24,7 +24,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
           {/* Brand */}
           <a href="/" className="text-2xl font-extrabold text-white font-poppins hover:text-teal-400 transition">
-            HDC
+            HDS
           </a>
 
           {/* Desktop Nav Links */}
