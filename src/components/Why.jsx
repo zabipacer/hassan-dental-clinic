@@ -68,7 +68,7 @@ export default function AboutSection() {
             </div>
             <div className="flex items-start gap-4">
               <Clock className="w-6 h-6 text-teal-400" aria-hidden="true" />
-              <time className="text-gray-300" itemProp="openingHours"> 5 PM to 9 PM</time>
+              <time className="text-gray-300" itemProp="openingHours"> 5 PM to 9 PM Weekdays</time>
             </div>
             <div className="flex items-start gap-4">
               <Star className="w-6 h-6 text-teal-400" aria-hidden="true" />

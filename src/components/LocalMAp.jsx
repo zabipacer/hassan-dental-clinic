@@ -7,7 +7,7 @@ const LOCAL_INFO = {
   subtitle: 'Dr. Imran Zafer Bucha',
   address: 'Shop #10, Mohammad Arcade, Chungi No. 9, Multan, 60000',
   phones: ['+923336194850', '+923009634850', '+923154151515'],
-  hours: 'Closed ⋅ Opens 5 PM',
+  hours: 'Closed ⋅ 5 PM to 9 Weekdays',
   rating: 5.0,
   reviewCount: 26,
   category: 'Dental clinic in Multan',
