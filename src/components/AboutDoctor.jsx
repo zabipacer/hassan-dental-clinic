@@ -76,8 +76,7 @@ export default function AboutDoctor() {
             Meet Dr. Imran Bucha
           </h2>
           <p className="text-lg sm:text-xl mb-10 leading-relaxed max-w-prose" itemProp="description">
-            With over 25 years of dedicated practice since graduating in 2000, Dr. Imran Bucha earned his degrees from Bahauddin Zakariya University and Nishtar Medical College. He integrates advanced digital techniques with personalized care to ensure every patient achieves a healthy, confident smile.
-          </p>
+       With over 25 years of experience since graduating in 2000, Dr. Imran Bucha earned his degrees from Nishtar Medical College, operating under the umbrella of Bahauddin Zakariya University. He combines advanced digital techniques with personalized care to deliver healthy, confident smiles.  </p>
 
           {/* Cards Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-10">
@@ -93,11 +92,13 @@ export default function AboutDoctor() {
               <FaCertificate className="w-10 h-10 text-teal-400 mb-4" aria-hidden="true" />
               <h3 className="text-white text-xl font-semibold mb-2">Certificates</h3>
               <ul className="text-gray-300 text-sm list-disc list-inside space-y-1">
-                <li>Certificate in Plantology</li>
+                <li>Certificate in Implantology</li>
                 <li>Endodontist Certification</li>
                 <li>Conservative Dentistry Certification</li>
                 <li>Prosthodontist Certification</li>
                 <li>Invisible Aligners Training</li>
+               <li>Orthodontist</li>
+              
               </ul>
             </motion.div>
 

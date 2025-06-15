@@ -21,9 +21,9 @@ const galleryItems = [
   { src: '/bucha1.jpg', title: 'Preventive Checkup', desc: 'Routine exam includes X-rays, oral evaluation, and personalized hygiene guidance.' },
   { src: '/bucha2.jpg', title: 'Scaling & Polishing', desc: 'Deep cleaning to remove plaque, tartar, and surface stains for fresh breath.' },
   { src: '/bucha3.jpg', title: 'Fluoride Treatment', desc: 'Protective fluoride varnish strengthens enamel and helps prevent cavities.' },
-  { src: '/bucha4.jpg', title: 'Teeth Whitening', desc: 'In-office bleaching to brighten your smile up to 8 shades safely.' },
-  { src: '/bucha5.jpg', title: 'Smile Makeover', desc: 'Customized veneers, bonding, and braces for a complete aesthetic transformation.' },
-  { src: '/bucha6.jpg', title: 'Digital Dentistry', desc: '3D imaging and CAD/CAM precision for seamless restorations.' },
+  { src: '/b9.png', title: 'Teeth Whitening', desc: 'In-office bleaching to brighten your smile up to 8 shades safely.' },
+  { src: '/b12.jpg', title: 'Smile Makeover', desc: 'Customized veneers, bonding, and braces for a complete aesthetic transformation.' },
+  { src: '/b11.jpg', title: 'Digital Dentistry', desc: '3D imaging and CAD/CAM precision for seamless restorations.' },
 ];
 
 export default function HassanGallery() {

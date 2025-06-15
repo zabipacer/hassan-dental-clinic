@@ -78,7 +78,7 @@ export default function FeaturedServices() {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
           >
-            At Alpha Practice, we combine state-of-the-art technology with compassionate care to provide a full spectrum of dental solutions. From routine checkups that catch issues early to advanced digital dentistry techniques for seamless restorations, our goal is to ensure your smile is healthy, beautiful, and long-lasting.
+            At Hassan Dental Surgery, we combine state-of-the-art technology with compassionate care to provide a full spectrum of dental solutions. From routine checkups that catch issues early to advanced digital dentistry techniques for seamless restorations, our goal is to ensure your smile is healthy, beautiful, and long-lasting.
           </motion.p>
         </header>
 

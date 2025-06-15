@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 
 export default function BeforeAfterGallery() {
   const images = [
-    'bucha1.jpg',
+    'b15.jpg',
     'bucha11.webp',
-    'b3.jpg',
+    'b16.jpg',
   ];
 
   const [hoveredIndex, setHoveredIndex] = useState(null);

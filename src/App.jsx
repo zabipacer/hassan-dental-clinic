@@ -24,8 +24,9 @@ function App() {
 <HeroSection/>
 
 <FeaturedServices/>
-<AboutDoctor/>
+
 <AboutSection/>
+<AboutDoctor/>
 <HassanGallery/>
 <Testimonials/>
 <BeforeAfterGallery/>
